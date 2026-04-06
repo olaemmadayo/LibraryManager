@@ -1,4 +1,5 @@
 require("dotenv").config();
+const colors = require("colors");
 const express = require("express");
 const connectDB = require("./config/database.js");
 const cors = require("cors");
