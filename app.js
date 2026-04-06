@@ -17,6 +17,7 @@ app.use("/authors", require("./routes/authorRoutes"));
 app.use("/books", require("./routes/bookRoutes"));
 app.use("/students", require("./routes/studentRoutes"));
 app.use("/attendants", require("./routes/attendantRoutes"));
+app.use("/auth", require("./routes/authRoutes"));
 
 // server
 const PORT = process.env.PORT || 5000;
