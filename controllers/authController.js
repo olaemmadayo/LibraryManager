@@ -4,7 +4,8 @@ const jwt = require("jsonwebtoken");
 
 // REGISTER
 exports.register = async (req, res) => {
-  const { name, email, password } = req.body;
+  try {
+    const { name, email, password } = req.body;
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -15,11 +16,19 @@ exports.register = async (req, res) => {
   });
 
   res.status(201).json(user);
+  } catch (error) {
+    if (error.code === 11000) {
+      return res.status(400).json({ message: "Email must be unique" });
+    }
+    res.status(500).json({ message: error.message });
+  }
+
 };
 
 // LOGIN
 exports.login = async (req, res) => {
-  const { email, password } = req.body;
+  try {
+    const { email, password } = req.body;
 
   const user = await User.findOne({ email });
 
@@ -34,4 +43,7 @@ exports.login = async (req, res) => {
   );
 
   res.json({ token });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
