@@ -13,7 +13,7 @@
 
 ```bash
 git clone <git@github.com:olaemmadayo/LibraryManager.git>
-cd libaryManager
+cd libraryManager
 npm install
 ```
 
@@ -47,7 +47,7 @@ Returns:
 
 ```
 {
-  "token": "JWT_TOKEN"
+  "token": ""eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2NjJiZWVmOGYwYTE2MmI0MzQzZSIsInJvbGUiOiJBVFRFTkRBTlQiLCJpYXQiOjE3NzU0NjIxMTIsImV4cCI6MTc3NTU0ODUxMn0.-ljctDjlXot3-JHKrF2MJjyWpUpbyhxEycKjg6cWe4c""
 }
 ```
 
